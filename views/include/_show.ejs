@@ -1,0 +1,20 @@
+<% for(var i = 0; i < stores.length; i++) { %>
+    <tr>
+        <!--print Variables-->
+        <td><%= i + 1 %></td>
+        <td><%= stores[i].name %></td>
+        <td><%= stores[i].address %></td>
+        <td><%= stores[i].open %></td>
+        <td><%= stores[i].close %></td>
+        <td><%= stores[i].status %></td>
+        <td>
+            <!--  ?id=<%= stores[i]._id%> : we pass the id to it  -->
+            <a href="/update-store?id=<%= stores[i]._id%>" class="btn border-shadow update">
+                <span class="text-gradient"><i class="fas fa-pencil-alt"></i></span>
+            </a>
+            <a class="btn border-shadow delete" data-id=<%= stores[i]._id%> >
+                <span class="text-gradient"><i class="fas fa-times"></i></span>
+            </a>
+        </td>
+    </tr>
+    <% } %>

@@ -1,0 +1,66 @@
+<!-- include header -->
+<%- include('include/_header'); -%> <!--This Syntax works ,use it always-->
+<!-- /include header -->
+
+
+  <!-- Main Site -->
+  <main id="site-main">
+    <div class="container">
+        <div class="box-nav d-flex justify-between">
+           <div class="filter">
+               <a href="/"><i class="fas fa-angle-double-left"></i> All Stores</a>
+           </div>
+        </div>
+        <div class="form-title text-center">
+            <h2 class="text-dark">Update Store</h2>
+            <span class="text-light">Use the below form to Update an account</span>
+        </div>
+
+        <!-- add store form -->
+         <!-- form handling -->
+ <form method="POST" id="update_store">
+    <div class="new_store">
+        <div class="form-group">
+            <label for="name" class="text-light">Name</label>
+            <input type="hidden" name="id" value="<%= store._id %>">
+            <input type="text" name="name" value="<%= store.name %>" placeholder="Arena"> <!--pass the name-->
+        </div>
+        <div class="form-group">
+            <label for="address" class="text-light">Address</label> <!--Email-->
+            <input type="text" name="address" value="<%= store.address%>" placeholder="Rafidia">
+        </div>
+        <div class="form-group">
+            <label for="open" class="text-light">Open At</label> 
+            <input type="text" name="open" value="<%= store.open%>" placeholder="9:00 AM">
+        </div>  
+        <div class="form-group">
+            <label for="close" class="text-light">Close At</label> 
+            <input type="text" name="close" value="<%= store.close%>" placeholder="9:00 pM">
+        </div>
+
+        <div class="form-group">
+            <label for="status" class="text-light">Status</label>
+            <div class="radio inline">
+                <input type="radio" id="radio-4" name="status" value="Active" <%= store.status == 'Active' ? 'checked' : '' %> >
+                <label for="radio-4" class="radio-label">Active</label>
+            </div>
+            <div class="radio inline">
+                <input type="radio" id="radio-5" name="status" value="Inactive" <%= store.status == 'Inactive' ? 'checked' : '' %> >
+                <label for="radio-5" class="radio-label">Inactive</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn text-dark update">Save</button>
+        </div>
+
+    </div>
+</form>
+       
+    </div>
+</main>
+<!-- /Main Site -->
+
+<!-- include footer -->
+<%- include('include/_footer'); -%>
+<!-- /include footer -->
